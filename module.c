@@ -14,9 +14,10 @@
 #include <vm/vm_page.h>
 #include <vm/vm_pageout.h>
 #include <vm/vm_map.h>
-//#include <machine/bus.h>
-#include <sys/fcntl.h>
 
+#include <sys/fcntl.h>
+MALLOC_DECLARE (M_PAGE);
+MALLOC_DEFINE (M_PAGE, "temp_page_buffer", "Buffer for pages");
 //#define PHYS_PAGE_COUNT (long len) (len/PAGE_SIZE + 1)
 long  get_physical_mem_size(void);
 int dump_memory(void);
@@ -51,11 +52,11 @@ int dump_memory(){
 	unsigned long page_count = total_physical_mem_size/PAGE_SIZE+1;	
 	unsigned long dst = 0;
 	int error = 0;
-	char * page = malloc (PAGE_SIZE, M_TEMP, M_NOWAIT);
+	char * page = malloc (PAGE_SIZE, M_PAGE, M_WAITOK);
 	for (int i = 0; i < page_count; i++, dst += PAGE_SIZE){
 		vm_page_t virtual_address;
 		virtual_address = PHYS_TO_VM_PAGE(dst);
-		if (virtual_address){
+		if (virtual_address != 0){
 		memcpy( page, (void *) virtual_address, PAGE_SIZE);
 		uprintf("Virtual Address 0x%s\t", page);
 		error = kio_write(vp, virtual_address, PAGE_SIZE);
