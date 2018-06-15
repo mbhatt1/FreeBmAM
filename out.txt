@@ -1,0 +1,36 @@
+Warning: Object directory not changed from original /root/module
+cc -O2 -pipe  -fno-strict-aliasing -D_KERNEL -DKLD_MODULE -nostdinc   -I. -I/usr/src/sys -fno-common   -MD  -MF.depend.subr_kernio.o -MTsubr_kernio.o -mno-mmx -mno-sse -msoft-float -ffreestanding -fwrapv -fstack-protector -Wall -Wredundant-decls -Wnested-externs -Wstrict-prototypes  -Wmissing-prototypes -Wpointer-arith -Winline -Wcast-qual  -Wundef -Wno-pointer-sign -D__printf__=__freebsd_kprintf__  -Wmissing-include-dirs -fdiagnostics-show-option  -Wno-unknown-pragmas  -Wno-error-tautological-compare -Wno-error-empty-body  -Wno-error-parentheses-equality -Wno-error-unused-function  -Wno-error-pointer-sign -Wno-error-shift-negative-value -Wno-error-address-of-packed-member  -mno-aes -mno-avx  -std=iso9899:1999 -c subr_kernio.c -o subr_kernio.o
+subr_kernio.c:49:59: error: too few arguments to function call, expected 6, have 5
+        error = vn_open_cred(&nd, &flags, cmode, td->td_ucred, -1);
+                ~~~~~~~~~~~~                                     ^
+/usr/src/sys/sys/vnode.h:688:1: note: 'vn_open_cred' declared here
+int     vn_open_cred(struct nameidata *ndp, int *flagp, int cmode,
+^
+subr_kernio.c:92:39: error: too many arguments provided to function-like macro invocation
+        vn_lock(vp, LK_EXCLUSIVE | LK_RETRY, td);
+                                             ^
+/usr/src/sys/sys/vnode.h:686:9: note: macro 'vn_lock' defined here
+#define vn_lock(vp, flags) _vn_lock(vp, flags, __FILE__, __LINE__)
+        ^
+subr_kernio.c:92:2: error: use of undeclared identifier 'vn_lock'; did you mean '_vn_lock'?
+        vn_lock(vp, LK_EXCLUSIVE | LK_RETRY, td);
+        ^~~~~~~
+        _vn_lock
+/usr/src/sys/sys/vnode.h:685:5: note: '_vn_lock' declared here
+int     _vn_lock(struct vnode *vp, int flags, char *file, int line);
+        ^
+subr_kernio.c:93:2: warning: implicit declaration of function 'VOP_LEASE' is invalid in C99 [-Wimplicit-function-declaration]
+        VOP_LEASE(vp, td, td->td_ucred, LEASE_WRITE);
+        ^
+subr_kernio.c:93:2: warning: this function declaration is not a prototype [-Wstrict-prototypes]
+subr_kernio.c:93:34: error: use of undeclared identifier 'LEASE_WRITE'
+        VOP_LEASE(vp, td, td->td_ucred, LEASE_WRITE);
+                                        ^
+subr_kernio.c:92:2: warning: expression result unused [-Wunused-value]
+        vn_lock(vp, LK_EXCLUSIVE | LK_RETRY, td);
+        ^~~~~~~
+3 warnings and 4 errors generated.
+*** Error code 1
+
+Stop.
+make: stopped in /root/module
