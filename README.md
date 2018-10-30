@@ -19,6 +19,14 @@ This is an alpha software. Please expect bad bad bugs. Let me know in the issues
 ### Prerequisites
 Kernel source tree
 
+Main Source Files:
+
+```
+module.c (Most of the logic)
+subr_kernio.c (File IO from the kernel). 
+
+```
+Suggestions are welcome under Issues
 
 ## Contributing
 
