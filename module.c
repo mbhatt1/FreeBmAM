@@ -56,7 +56,7 @@ int dump_memory(){
 	char * page = malloc (PAGE_SIZE, M_PAGE, M_WAITOK);
 	for (int i = 0; i < page_count; i++, dst += PAGE_SIZE){
 		vm_page_t virtual_address;
-		virtual_address = pmap_kenter_temporary(dst, 0);
+		virtual_address = pmap_kenter_temporary(trunc_page(dst), 0);
 		if (virtual_address != 0){
 		//memcpy( page, (void *) virtual_address, PAGE_SIZE);
 		//uprintf("Copied Page 0x%x\t", dst);
