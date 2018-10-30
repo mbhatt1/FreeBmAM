@@ -1,4 +1,4 @@
-# FreeBmAM
+# Free-B-sd-m-emory-A-cquisition-Module(FreeBmAM)
 Memory acquisition tool for FreeBSD (alpha).
 
 ## Getting Started
