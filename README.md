@@ -1,4 +1,4 @@
-# Free-B-sd-m-emory-A-cquisition-Module(FreeBmAM)
+# FreeBmAM ~ Free B-sd m-emory A-cquisition M-odule
 Memory acquisition tool for FreeBSD (alpha). Took me a couple of months so please be nice :) Just creates a DD now. TODO: aff4 support!
 
 
