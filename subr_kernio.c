@@ -64,7 +64,7 @@ kio_close(struct vnode *vp)
 }
 
 int
-kio_write(struct vnode *vp, void *buf, size_t size)
+kio_write(struct vnode *vp, void *buf, size_t size, unsigned long offset)
 {
 	struct thread *td = curthread;
 	struct mount *mp;
@@ -78,7 +78,7 @@ kio_write(struct vnode *vp, void *buf, size_t size)
 	aiov.iov_len = size;
 
 	auio.uio_iov = &aiov;
-	auio.uio_offset = 0;
+	auio.uio_offset = offset;
 	auio.uio_segflg = UIO_SYSSPACE;
 	auio.uio_rw = UIO_WRITE;
 	auio.uio_iovcnt = 1;

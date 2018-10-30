@@ -52,20 +52,22 @@ int dump_memory(){
 	unsigned long page_count = total_physical_mem_size/PAGE_SIZE+1;	
 	unsigned long dst = 0;
 	int error = 0;
+        unsigned long offset = 0;
 	char * page = malloc (PAGE_SIZE, M_PAGE, M_WAITOK);
 	for (int i = 0; i < page_count; i++, dst += PAGE_SIZE){
 		vm_page_t virtual_address;
-		virtual_address = PHYS_TO_VM_PAGE(dst);
+		virtual_address = pmap_kenter_temporary(dst, 0);
 		if (virtual_address != 0){
 		memcpy( page, (void *) virtual_address, PAGE_SIZE);
-		uprintf("Virtual Address 0x%s\t", page);
-		error = kio_write(vp, virtual_address, PAGE_SIZE);
+		uprintf("Copied Page 0x%x\t", dst);
+		error = kio_write(vp, virtual_address, PAGE_SIZE,offset);
+                offset = dst;
 		if (error != 0){
 			uprintf("Can't write to file \n");
 			kio_close(vp);
 			return -1;
 		}else{
-			uprintf("Virtual Address 0x%x \n",(unsigned int) virtual_address);
+			uprintf("Physical Address 0x%x Virtual Address 0x%x \n",(unsigned int)dst, (unsigned int) virtual_address);
 		}
 		}
 	}
