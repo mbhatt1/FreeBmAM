@@ -1,5 +1,5 @@
 # Free-B-sd-m-emory-A-cquisition-Module(FreeBmAM)
-Memory acquisition tool for FreeBSD (alpha). Took me a couple of months so please be nice :)
+Memory acquisition tool for FreeBSD (alpha). Took me a couple of months so please be nice :) Just creates a DD now. TODO: aff4 support!
 
 
 ## Getting Started
