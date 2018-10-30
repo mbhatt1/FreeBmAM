@@ -1,5 +1,6 @@
 # Free-B-sd-m-emory-A-cquisition-Module(FreeBmAM)
-Memory acquisition tool for FreeBSD (alpha).
+Memory acquisition tool for FreeBSD (alpha). Took me a couple of months so please be nice :)
+
 
 ## Getting Started
 Make sure you have the sources in the operating system available. Otherwise use svnlite to checkout. 
