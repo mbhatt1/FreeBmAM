@@ -59,7 +59,7 @@ int dump_memory(){
 		virtual_address = pmap_kenter_temporary(dst, 0);
 		if (virtual_address != 0){
 		//memcpy( page, (void *) virtual_address, PAGE_SIZE);
-		uprintf("Copied Page 0x%x\t", dst);
+		//uprintf("Copied Page 0x%x\t", dst);
 		error = kio_write(vp, virtual_address, PAGE_SIZE, offset);
                 offset = dst;
 		if (error != 0){
