@@ -40,3 +40,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 * LiME
 * Joe Sylve
+* Author of subr_kernio.c and kernio.h for providing the base code.
