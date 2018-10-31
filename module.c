@@ -61,6 +61,9 @@ int dump_memory(){
 		//memcpy( page, (void *) virtual_address, PAGE_SIZE);
 		//uprintf("Copied Page 0x%x\t", dst);
 		error = kio_write(vp, virtual_address, PAGE_SIZE, offset);
+		if (error != 0){
+			uprintf("Your file path may not be correct. This module does not create directories that do not exist. Please FIX PATH\n");
+		}
 		pause (NULL, 100);
                 offset = dst;
 		if (error != 0){
