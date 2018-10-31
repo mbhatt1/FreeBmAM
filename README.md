@@ -1,5 +1,7 @@
 # FreeBmAM ~ Free B-sd m-emory A-cquisition M-odule
-Memory acquisition tool for FreeBSD (alpha). Took me a couple of months so please be nice :) Just creates a DD now. TODO: aff4 support!
+Memory acquisition tool for FreeBSD (alpha). Took me a couple of months so please be nice :) Just creates a DD now. TODO: aff4 support! 
+
+No promises. I will fix any issue you guys find though! :D 
 
 
 ## Getting Started
