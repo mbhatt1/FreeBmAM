@@ -65,7 +65,7 @@ int dump_memory(){
 			uprintf("Your file path may not be correct. This module does not create directories that do not exist. Please FIX PATH\n");
 			return -1;
 		}
-		pause (NULL, 100);
+		pause (NULL, 10);
                 offset = dst;
 		if (error != 0){
 			uprintf("Can't write to file \n");
