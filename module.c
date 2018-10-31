@@ -63,6 +63,7 @@ int dump_memory(){
 		error = kio_write(vp, virtual_address, PAGE_SIZE, offset);
 		if (error != 0){
 			uprintf("Your file path may not be correct. This module does not create directories that do not exist. Please FIX PATH\n");
+			return -1;
 		}
 		pause (NULL, 100);
                 offset = dst;
