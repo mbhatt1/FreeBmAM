@@ -54,7 +54,7 @@ int dump_memory(){
 	int error = 0;
         unsigned long offset = 0;
 	char * page = malloc (PAGE_SIZE, M_PAGE, M_WAITOK);
-	for (int i = 0; i < page_count; i++, dst += PAGE_SIZE){
+	for (int i = 0; i < page_count; i++){
 		vm_page_t virtual_address;
 		virtual_address = pmap_kenter_temporary(trunc_page(dst), 0);
 		if (virtual_address != 0){
@@ -74,6 +74,7 @@ int dump_memory(){
 		}else{
 			uprintf("Physical Address 0x%x Virtual Address 0x%x \n",(unsigned int)dst, (unsigned int) virtual_address);
 		}
+			dst += PAGE_SIZE;
 		}
 	}
 
