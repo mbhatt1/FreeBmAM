@@ -61,6 +61,7 @@ int dump_memory(){
 		//memcpy( page, (void *) virtual_address, PAGE_SIZE);
 		//uprintf("Copied Page 0x%x\t", dst);
 		error = kio_write(vp, virtual_address, PAGE_SIZE, offset);
+		pause (NULL, 100);
                 offset = dst;
 		if (error != 0){
 			uprintf("Can't write to file \n");
