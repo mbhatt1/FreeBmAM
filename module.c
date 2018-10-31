@@ -49,7 +49,7 @@ int dump_memory(){
 
 	vp = kio_open(filename, O_CREAT | O_WRONLY | O_APPEND, 0644);
 
-	unsigned long page_count = total_physical_mem_size/PAGE_SIZE+1;	
+	unsigned long page_count = total_physical_mem_size/PAGE_SIZE;	
 	unsigned long dst = 0;
 	int error = 0;
         unsigned long offset = 0;
