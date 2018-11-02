@@ -58,9 +58,9 @@ int dump_memory(){
 		vm_page_t virtual_address;
 		virtual_address = pmap_kenter_temporary(trunc_page(dst), 0);
 		if (virtual_address != 0){
-		memcpy( page, (void *) virtual_address, PAGE_SIZE);
-		uprintf("Copied Page 0x%x\t", dst);
-		error = kio_write(vp, page, PAGE_SIZE, offset);
+// 		memcpy( page, (void *) virtual_address, PAGE_SIZE);
+// 		uprintf("Copied Page 0x%x\t", dst);
+		error = kio_write(vp, virtual_address, PAGE_SIZE, offset);
 		if (error != 0){
 			uprintf("Your file path may not be correct. This module does not create directories that do not exist. Please FIX PATH\n");
 			return -1;
