@@ -74,10 +74,10 @@ int dump_memory(){
 		}else{
 			uprintf("Physical Address 0x%x Virtual Address 0x%x \n",(unsigned int)dst, (unsigned int) virtual_address);
 		}
-			
+		dst += PAGE_SIZE;	
 		}
 		offset = dst;
-		dst += PAGE_SIZE;
+		
 	}
 
 	return 0;
