@@ -1,9 +1,6 @@
 # FreeBmAM ~ Free B-sd m-emory A-cquisition M-odule
 Memory acquisition tool for FreeBSD (alpha). Took me a couple of months so please be nice :) Just creates a DD now. 
 
-Please post any issues you may have. 
-
-
 ## Getting Started
 Make sure you have the sources in the operating system available. Otherwise use svnlite to checkout. 
 
@@ -18,7 +15,7 @@ $kldload FreeBmAM.ko
 $kldunload FreeBmAM.ko
 ```
 
-This is an alpha software. Please expect bad bad bugs. Let me know in the issues of this repo.
+This is an alpha software. 
 
 ### Prerequisites
 Kernel source tree
@@ -47,4 +44,4 @@ This project is licensed under the GNU License - see the [LICENSE.md](LICENSE.md
 * Joe Sylve, Irfan Ahmed, Vassil Roussev
 * Author of subr_kernio.c and kernio.h for providing the base code.
 
-# Please post any issues you may have.
+# Please post any issues.
