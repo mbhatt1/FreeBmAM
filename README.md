@@ -1,7 +1,7 @@
 # FreeBmAM ~ Free B-sd m-emory A-cquisition M-odule
 Memory acquisition tool for FreeBSD (alpha). Took me a couple of months so please be nice :) Just creates a DD now. TODO: aff4 support! 
 
-No promises. I will fix any issue you guys find though! :D 
+Please post any issues you may have. 
 
 
 ## Getting Started
@@ -9,6 +9,7 @@ Make sure you have the sources in the operating system available. Otherwise use 
 
 After, to compile the kernel module, go to the folder and make. 
 ```
+$ awk -f <location of vnode.awk> <location of vnode.src> -h
 $make
 $cp FreeBmAM.ko /boot/kernel
 $kldload FreeBmAM.ko
