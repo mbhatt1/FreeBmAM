@@ -23,7 +23,7 @@ long  get_physical_mem_size(void);
 int dump_memory(void);
 //unsigned int start_value = 0;
 long total_physical_mem_size = 0;
-const char * filename = "/root/module/Memorydump.dd";
+const char * filename = "/root/FreeBmAM/Memorydump.dd";
 /**
  * Method to return value of total physical memory size
  */
