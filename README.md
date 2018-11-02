@@ -1,5 +1,5 @@
 # FreeBmAM ~ Free B-sd m-emory A-cquisition M-odule
-Memory acquisition tool for FreeBSD (alpha). Took me a couple of months so please be nice :) Just creates a DD now. TODO: aff4 support! 
+Memory acquisition tool for FreeBSD (alpha). Took me a couple of months so please be nice :) Just creates a DD now. 
 
 Please post any issues you may have. 
 
@@ -46,3 +46,5 @@ This project is licensed under the GNU License - see the [LICENSE.md](LICENSE.md
 * Linus Trovalds for inventing git
 * Joe Sylve, Irfan Ahmed, Vassil Roussev
 * Author of subr_kernio.c and kernio.h for providing the base code.
+
+# Please post any issues you may have.
