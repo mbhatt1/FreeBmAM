@@ -53,7 +53,7 @@ int dump_memory(){
 	unsigned long dst = 0;
 	int error = 0;
         unsigned long offset = 0;
-	void * page = malloc (PAGE_SIZE, M_PAGE, M_NOWAIT | M_USE_RESERVE);
+//	void * page = malloc (PAGE_SIZE, M_PAGE, M_NOWAIT | M_USE_RESERVE);
 	for (int i = 0; i < page_count; i++){
 		vm_page_t virtual_address;
 		virtual_address = pmap_kenter_temporary(trunc_page(dst), 0);
