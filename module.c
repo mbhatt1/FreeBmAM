@@ -90,7 +90,7 @@ int dump_memory(){
 		offset = dst;
 		
 	}
-	kio_close(vp);
+//	kio_close(vp);
 	return 0;
 }
 
