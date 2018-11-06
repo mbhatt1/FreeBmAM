@@ -49,7 +49,7 @@ int dump_memory(){
 
 	vp = kio_open(filename, O_CREAT | O_WRONLY | O_APPEND, 0644);
 	if (vp == NULL) {
-		uprintf("Directory doesn't exist \n");
+		uprintf("Your file path may not be correct. This module does not create directories that do not exist. Please FIX PATH in module.c.\n\n");
 		return -1;
 	}
 	unsigned long page_count = total_physical_mem_size/PAGE_SIZE;	
