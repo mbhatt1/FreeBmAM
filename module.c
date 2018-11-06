@@ -68,8 +68,8 @@ int dump_memory(){
 			uprintf("Your file path may not be correct. This module does not create directories that do not exist. Please FIX PATH\n");
 			return -1;
 		}
-		pause (NULL, 10);
-                
+		
+                pmap_kenter_temporary_free(virtual_address);
 		if (error != 0){
 			uprintf("Can't write to file \n");
 			kio_close(vp);
