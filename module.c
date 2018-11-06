@@ -59,9 +59,8 @@ int dump_memory(){
 //	void * page = malloc (PAGE_SIZE, M_PAGE, M_NOWAIT | M_USE_RESERVE);
 	for (int i = 0; i < page_count; i++){
 		vm_page_t virtual_address;
-	//	virtual_address = pmap_kenter_temporary(trunc_page(dst), 
-//0);
-		virtual_address = pmap_mapdev((vm_offset_t) dst, PAGE_SIZE);
+		virtual_address = pmap_kenter_temporary(trunc_page(dst), 0);
+		//virtual_address = pmap_mapdev((vm_offset_t) dst, PAGE_SIZE);
 
 		if (virtual_address != 0){
 // 		memcpy( page, (void *) virtual_address, PAGE_SIZE);
@@ -71,8 +70,8 @@ int dump_memory(){
 			uprintf("Your file path may not be correct. This module does not create directories that do not exist. Please FIX PATH\n");
 			return -1;
 		}
-//		pmap_kremove((vm_offset_t)virtual_address);
-		pmap_unmapdev((vm_offset_t) virtual_address, PAGE_SIZE);
+		pmap_kremove((vm_offset_t)virtual_address);
+//		pmap_unmapdev((vm_offset_t) virtual_address, PAGE_SIZE);
               //  pause(NULL, 5);
 		if (error != 0){
 			uprintf("Can't write to file \n");
