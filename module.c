@@ -106,6 +106,8 @@ static int BmAM_modevent(struct module *m, int what, void *arg ){
 	switch(what){
 		case MOD_LOAD:
 			total_physical_mem_size = get_physical_mem_size();
+			uprintf("FreeBmAM Kernel Module for Memory Acquisition");
+			uprintf("Author: Alex 'The Sage'");
 			uprintf("Free-BmAM Module Loaded.\n");
 		       	uprintf("Total memory size is 0x%lx \n", total_physical_mem_size);
 			int error = 0;
