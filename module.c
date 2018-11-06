@@ -48,7 +48,7 @@ int dump_memory(){
 	struct vnode * vp;
 
 	vp = kio_open(filename, O_CREAT | O_WRONLY | O_APPEND, 0644);
-	if (vp == -1) {
+	if (vp == NULL) {
 		uprintf("Directory doesn't exist \n");
 		return -1;
 	}
