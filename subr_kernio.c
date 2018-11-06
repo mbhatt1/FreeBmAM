@@ -91,7 +91,7 @@ kio_write(struct vnode *vp, void *buf, size_t size, unsigned long offset)
 	vn_start_write(vp, &mp, V_WAIT);
 	vn_lock(vp, LK_EXCLUSIVE | LK_RETRY);
 	//VOP_LEASE(vp, td, td->td_ucred, LEASE_WRITE);
-	VOP_WRITE(vp, &auio, IO_UNIT | IO_SYNC, td->td_ucred);
+	VOP_WRITE(vp, &auio, IO_UNIT | IO_ASYNC, td->td_ucred);
 	VOP_UNLOCK(vp, 0);
 	vn_finished_write(mp);
 	return (0);
