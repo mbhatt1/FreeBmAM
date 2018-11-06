@@ -68,8 +68,8 @@ int dump_memory(){
 			uprintf("Your file path may not be correct. This module does not create directories that do not exist. Please FIX PATH\n");
 			return -1;
 		}
-		
-                pause(NULL, 5);
+		pmap_kremove(virtual_address);
+              //  pause(NULL, 5);
 		if (error != 0){
 			uprintf("Can't write to file \n");
 			kio_close(vp);
