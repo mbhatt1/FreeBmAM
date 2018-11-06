@@ -69,7 +69,7 @@ int dump_memory(){
 			return -1;
 		}
 		
-                pmap_kenter_temporary_free(virtual_address);
+                pause(NULL, 5);
 		if (error != 0){
 			uprintf("Can't write to file \n");
 			kio_close(vp);
