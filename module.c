@@ -48,7 +48,10 @@ int dump_memory(){
 	struct vnode * vp;
 
 	vp = kio_open(filename, O_CREAT | O_WRONLY | O_APPEND, 0644);
-
+	if (vp == -1) {
+		uprintf("Directory doesn't exist \n");
+		return -1;
+	}
 	unsigned long page_count = total_physical_mem_size/PAGE_SIZE;	
 	unsigned long dst = 0;
 	int error = 0;
