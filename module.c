@@ -61,7 +61,7 @@ int dump_memory(){
 	for (int i = 0; i < page_count; i++){
 		vm_page_t virtual_address;
 		virtual_address = PHYS_TO_VM_PAGE(dst);
-		if (virtual_address == 0){
+		if (virtual_address == NULL){
 		virtual_address = pmap_kenter_temporary(trunc_page(dst), 0);
 		self_map = 1;
 		}
