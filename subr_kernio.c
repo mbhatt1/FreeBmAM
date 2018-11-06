@@ -49,7 +49,7 @@ kio_open(const char *file, int flags, int cmode)
 	error = vn_open_cred(&nd, &flags, cmode,V_SAVE | V_NORMAL , td->td_ucred, NULL);
 	NDFREE(&nd, NDF_ONLY_PNBUF);
 	if (error != 0)
-		return -1;
+		return (NULL);
 	/* We just unlock so we hold a reference. */
 	VOP_UNLOCK(nd.ni_vp, 0);
 	return (nd.ni_vp);
