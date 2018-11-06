@@ -59,11 +59,13 @@ int dump_memory(){
 	unsigned long self_map = 0;
 //	void * page = malloc (PAGE_SIZE, M_PAGE, M_NOWAIT | M_USE_RESERVE);
 	for (int i = 0; i < page_count; i++){
-		vm_page_t virtual_address;
-		virtual_address = PHYS_TO_VM_PAGE(dst);
-		if (virtual_address == NULL){
+		vm_page_t virtual_address, virtual_address1;
+		virtual_address1 = PHYS_TO_VM_PAGE(dst);
+		if (virtual_address1 == NULL){
 		virtual_address = pmap_kenter_temporary(trunc_page(dst), 0);
 		self_map = 1;
+		}else{
+		virtual_address = virtual_address1;
 		}
 		//virtual_address = pmap_mapdev((vm_offset_t) dst, PAGE_SIZE);
 
