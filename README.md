@@ -7,12 +7,12 @@ Make sure you have the sources in the operating system available. Otherwise use 
 After, to compile the kernel module, go to the folder and make. 
 ```
 $ awk -f <location of vnode.awk> <location of vnode.src> -h
-$make
-$cp FreeBmAM.ko /boot/kernel
-$kldload FreeBmAM.ko
+$ make
+$ cp FreeBmAM.ko /boot/kernel
+$ kldload FreeBmAM.ko
 
 #To Unload:
-$kldunload FreeBmAM.ko
+$ kldunload FreeBmAM.ko
 ```
 
 This is an alpha software. 
