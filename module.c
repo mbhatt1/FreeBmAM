@@ -105,7 +105,7 @@ static int BmAM_modevent(struct module *m, int what, void *arg ){
 			if (error == 0){
 				uprintf("Dump Succesful. Check file\n");
 			}else{
-				uprintf("Dump not successful. Dump_memory threw an error that fucked things up\n");
+				uprintf("Dump not successful. Something went wrong. Possibly the PATH.\n");
 			}
 
 			break;
